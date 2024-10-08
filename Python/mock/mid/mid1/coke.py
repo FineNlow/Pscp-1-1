@@ -5,9 +5,7 @@ def coke():
     b = int(input())
     c = int(input())
     d = int(input())
-
     cost = 0
-
     if b == 0 or b > d:
         cost = a * d
     else:
@@ -20,6 +18,5 @@ def coke():
 
         if total_bottles_with_discount <= d:
             cost = min(cost, total_bottles_with_discount * c + (d - total_bottles_with_discount) * a)
-
     print(cost)
 coke()

@@ -1,36 +1,51 @@
-"""real"""\
+"""REal"""
+# แปลง string เป็น bits
 def con():
     """input on off"""
     bits = ""
-    for _ in range(8):
-        a = int(input())
-        if a == "on"
+    for _ in range(7):
+        a = input()
+        if a == "on":
             bits += "1"
         else:
             bits += "0"
     return bits
 
-def trans:
-    """convert"""
-    7seg = "Error"
-    if con() == "11111110":
-        7seg += "0"
-    elif con() == "01100000":
-        7seg += "1"
-    elif con() == "11011010":
-        7seg += "2"
-    elif con() == "11110010":
-        7seg += "3"
-    elif con() == "01100110":
-        7seg += "4"
-    elif con() == "10110110":
-        7seg += "5"
-    elif con() == "10111110":
-        7seg += "6"
-    elif con() == "11100000":
-        7seg += "7"
-    elif con() == "11111110":
-        7seg += "8"
-    elif con() == "11110110":
-        7seg += "9"
-    return 7seg
+# แปลง bits เป็นเลข
+def trans(bits):
+    """"bits trans"""
+    led_map = (
+        ("1111110", "0"),
+        ("0110000", "1"),
+        ("1101101", "2"),
+        ("1111001", "3"),
+        ("0110011", "4"),
+        ("1011011", "5"),
+        ("1011111", "6"),
+        ("1110000", "7"),
+        ("1111111", "8"),
+        ("1111011", "9")
+    )
+    for pattern, digit in led_map:
+        if bits == pattern:
+            return digit
+    return "ERROR"
+
+# เพิ่มจุดหลังเลข
+def adddot():
+    """check on/off"""
+    a = input()
+    return "." if a == "on" else ""
+
+# ตอบ
+def main():
+    """check segment"""
+    ans = ""
+    for _ in range(3):
+        bitss = con()
+        ans += trans(bitss) + adddot()
+    if "ERROR" in ans or ans.count(".") > 1:
+        print("Error")
+    else:
+        print(f"{float(ans):.2f}")
+main()

@@ -1,19 +1,14 @@
 """number"""
 def msg(text):
     """number"""
-    text.replace("0","O")
-    text.replace("1","I")
-    text.replace("2","")
-    text.replace("3","E")
-    text.replace("4","A")
-    text.replace("5","S")
-    text.replace("6","")
-    text.replace("7","")
-    text.replace("8","")
-    text.replace("9","")
-    text.replace("10","")
-    text.replace("11","")
-    text.replace("12","R")
-    text.replace("13","B")
+    text = text.replace("13","B")
+    text = text.replace("12","R")
+    text = text.replace("1","I")
+    text = text.replace("3","E")
+    text = text.replace("4","A")
+    text = text.replace("5","S")
+    text = text.replace("0","O")
+    for _ in "26789":
+        text = text.replace(_,"")
     print(text.upper())
 msg(input())

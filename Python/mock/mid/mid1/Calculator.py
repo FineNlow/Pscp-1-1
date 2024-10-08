@@ -12,3 +12,4 @@ def cal(num):
                 total += str(i)+"="
         print(len(total))
 cal(int(input()))
+ 
