@@ -1,14 +1,16 @@
-"""AndAgainAndAgainAndAgainAndAgainAndAgainAndAgain"""
+"""Again"""
 def ps():
-    """AndAgainAndAgainAndAgainAndAgainAndAgainAndAgain"""
-    bowel = ['a','e','i','o','u']
-    lst = [input().split(" ")]
-    count_bowel = []
-    for i in lst:
-        count = 0
-        for char in len(i):
-            if i in bowel:
-                count += 1
-        count_bowel.append(count)
-    
+    """Kuy"""
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    text = input().strip()
+    words = text.split()
+    def count_vowels(word):
+        return sum(1 for char in word.lower() if char in vowels)
+    new = [word for word in words if count_vowels(word) >= 2]
+    if new:
+        new.sort()
+        for word in new:
+            print(word.replace(".",""))
+    else:
+        print("Nope")
 ps()

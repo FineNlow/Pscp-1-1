@@ -1,26 +1,20 @@
-def catparade():
-    """kitty"""
-    ani_lst = []
-    ani_count_position = {}
-    #input
-    while (animals := input()) != "END":
-        animals = animals.split(",")
-        for ani in animals:
-            if ani == "IT'S A DOG" and ani_lst:
-                ani_lst.pop()
-            else:
-                ani_lst.append(ani)
-    #position
-    for i, ani in enumerate(ani_lst):
-        if ani not in ani_count_position:
-            ani_count_position[ani] = i+1
-    #count
-    ani_lst = ani_lst.sort()
-    for anis in enumerate(ani_lst):
-        count = 0
-        if anis == ani_lst[i]:
-            count += 1
+"""KodNandkwajafindindexKKK"""
+def main():
+    """Cat"""
+    animal_lst = []
+    unique_animals = []
+    # input
+    while (animal := input()) != "END":
+        if animal == "IT'S A DOG":
+            del animal_lst[-1]
         else:
-            count = 0
-
-catparade()
+            animal_lst.extend(animal.split(", "))
+    # count
+    for name in animal_lst:
+        if name not in unique_animals:
+            unique_animals.append(name)
+    unique_animals.sort()
+    for i in unique_animals:
+        count = animal_lst.count(i)
+        print(f"{i} {animal_lst.index(i) + 1} {count}")
+main()
