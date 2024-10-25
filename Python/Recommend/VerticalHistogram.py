@@ -13,5 +13,5 @@ def vh(text):
     for same in alpha:
         for check in nn:
             if check == same:
-                
+    
 vh(input().strip().replace(" ",""))
